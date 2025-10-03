@@ -29,6 +29,7 @@ venv/
 .Trashes
 ehthumbs.db
 Thumbs.db
+desktop.ini
 
 # Log files
 *.log

@@ -34,6 +34,10 @@ def evaluate(V_clean, W, H, y_true):
     Convenience: compute RRE, Accuracy, NMI.
     - Clustering is done on H.T (samples × k) as in the assignment example.
     """
+    n_sub = y_true.shape[0]
+    assert H.shape[1] == n_sub, f"H has {H.shape[1]} cols but y_sub has {n_sub} and V_sub has {V_clean.shape[1]}"
+    assert V_clean.shape[1] == n_sub, f"V_sub has {V_clean.shape[1]} cols but y_sub has {n_sub}"
+    
     rre = relative_reconstruction_error(V_clean, W, H)
     y_pred = assign_cluster_label(H.T, y_true)
     acc = accuracy_score(y_true, y_pred)
