@@ -50,7 +50,7 @@ def l2_nmf(V, k, max_iter=1000, tol=1e-6, verbose=True, random_state=None, init=
         
         # Print progress every 100 iterations
         if verbose and (iteration + 1) % 100 == 0:
-            print(f"Iteration {iteration+1}: Error H = {error_H:.6f},  Error W = {error_W:.6f}")
+            print(f"Iteration {iteration+1}: ΔH = {error_H:.6f},  ΔW = {error_W:.6f}")
 
         H, W = H_new, W_new
 
